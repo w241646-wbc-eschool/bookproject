@@ -1,0 +1,10 @@
+{% extends 'base.html' %} <!-- #コード追記（4-9） -->
+
+{% block title %}書籍作成{% endblock title %} <!-- #コード追記（4-9） -->
+
+{% block content %} <!-- #コード追記（4-9） -->
+<form method='POST' enctype="multipart/form-data" class="p-4 m-4 bg-light border border-success rounded form-group">{% csrf_token %} <!-- #コード追記（4-9）（p.155） #コード修正（5-8）（p.244） -->
+  {{ form.as_p }}
+  <input type='submit' value='作成する' >
+</form>
+{% endblock content %} <!-- #コード追記（4-9） -->

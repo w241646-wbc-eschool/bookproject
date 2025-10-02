@@ -1,0 +1,16 @@
+{% extends 'base.html' %} <!-- #コード追記（4-8） -->
+
+{% block title %}書籍一覧{% endblock title %} <!-- #コード追記（4-8） -->
+
+{% block content %} <!-- #コード追記（4-8） -->
+{% for item in object_list %}
+<div class="card">
+  <h5 class="card-header">{{ item.title }}</h5>
+  <div class="card-body">
+    <p class="card-text">{{ item.text }}</p>
+    <a href="{% url 'detail-book' item.pk %}" class="btn btn-primary">Go Somewhere</a> <!-- #コード追記（4-12(P.163)） -->
+    <h6 class="card-title">{{ item.category }}</h6>
+  </div>
+</div>
+{% endfor %}
+{% endblock content %} <!-- #コード追記（4-8） -->

@@ -1,0 +1,10 @@
+{% extends 'base.html' %} <!-- #コード追記（4-10）（p.160） -->
+
+{% block title %}書籍削除{% endblock title %} <!-- #コード追記（4-10） -->
+
+{% block content %} <!-- #コード追記（4-10） -->
+<form method='POST'>{% csrf_token %}
+  {{ form.as_p }}
+  <button type='submit'>{{ object.title }}を削除する</button>
+</form>
+{% endblock content %}

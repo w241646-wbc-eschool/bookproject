@@ -1,0 +1,16 @@
+{% extends 'base.html' %} <!-- #コード追記（4-8） -->
+
+{% block title %}書籍詳細{% endblock title %} <!-- #コード追記（4-8） -->
+
+{% block content %} <!-- #コード追記（4-8） -->
+<div class="card">
+  <h5 class="card-header">{{ object.title }}</h5>
+  <div class="card-body">
+    <p class="card-text">{{ object.text }}</p>
+    <a href="{% url 'list-book' %}" class="btn btn-primary">一覧へ</a> <!-- #コード修正（4-12(P.164)） -->
+    <a href="{% url 'update-book' object.pk %}" class="btn btn-primary">編集する</a> <!-- #コード追記（4-12(P.164)） -->
+    <a href="{% url 'delete-book' object.pk %}" class="btn btn-primary">削除する</a> <!-- #コード追記（4-12(P.164)） -->
+    <h6 class="card-title">{{ object.category }}</h6>
+  </div>
+</div>
+{% endblock content %} <!-- #コード追記（4-8） -->

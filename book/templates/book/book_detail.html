@@ -1,0 +1,34 @@
+{% extends 'base.html' %} <!-- #コード追記（4-8） -->
+
+{% block title %}{{ object.title }}{% endblock %} <!-- #コード修正（4-13（P.170）） -->
+{% block h1 %}書籍詳細{% endblock %} <!-- #コード修正（4-13（P.170）） -->
+
+{% block content %} <!-- #コード追記（4-8） -->
+<!-- #コード修正（4-13（P.170）） -->
+<div class="p-4 m-4 bg-light border border-success rounded">
+  <h2 class="text-success">{{ object.title }}</h2>
+  <div class="card-body">
+    <p>{{ object.text }}</p>
+
+    <!-- #コード追記（5-13（P.268）） -->
+    <div class="border p-4 mb-2">
+      {% for review in object.review_set.all %}
+      <div>
+        <h3 class="h4">{{ review.title }}</h3>
+        <div class="px-2">
+          <span>（投稿ユーザー：{{ review.user.username }}）</span>
+          <h6>評価：{{ review.rate }}点</h6>
+          <p>{{ review.text }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <a href="{% url 'list-book' %}" class="btn btn-primary">一覧へ</a> <!-- #コード修正（4-12(P.164)） -->
+    <a href="{% url 'review' object.pk %}" class="btn btn-primary">レビューする</a> <!-- #コード修正（5-7 (P.230)） -->
+    <a href="{% url 'update-book' object.pk %}" class="btn btn-primary">編集する</a> <!-- #コード追記（4-12(P.164)） -->
+    <a href="{% url 'delete-book' object.pk %}" class="btn btn-primary">削除する</a> <!-- #コード追記（4-12(P.164)） -->
+    <h6 class="card-title m-4">{{ object.category }}</h6>
+  </div>
+</div>
+{% endblock content %} <!-- #コード追記（4-8） -->
