@@ -1,9 +1,12 @@
+# databases:
+#   - name: mysitedb
+#     plan: free
+#     databasename: bookdb
+#     user: w241646
+
 databases:
   - name: mysitedb
     plan: free
-    # databasename: bookdb
-    properties:
-      user: w241646
 
 services:
   - type: web
