@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os # コード修正（6-4（P.308））
+
 from pathlib import Path
 import dj_database_url #コード追記（6-4（P.296））
 
@@ -21,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=z9upk3eyaz&n@e_i28)umhpon)*jrz-mh(3=mi7oewats^y2!'
+# SECRET_KEY = 'django-insecure-=z9upk3eyaz&n@e_i28)umhpon)*jrz-mh(3=mi7oewats^y2!'
+SECRET_KEY = os.environ.get('SECRET_KEY') #コード追記（6-4（P.298））
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
