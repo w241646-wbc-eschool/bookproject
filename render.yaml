@@ -2,7 +2,7 @@ databases:
   - name: mysitedb
     plan: free
     # databasename: bookdb
-    proparties:
+    properties:
       user: w241646
 
 services:
