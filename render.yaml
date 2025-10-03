@@ -1,8 +1,9 @@
 databases:
   - name: mysitedb
     plan: free
-    databasename: bookdb
-    user: w241646
+    # databasename: bookdb
+    proparties:
+      user: w241646
 
 services:
   - type: web
