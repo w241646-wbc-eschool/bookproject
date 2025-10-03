@@ -13,7 +13,6 @@ services:
     plan: free
     name: bookproject
     runtime: python
-    rootDir: bookproject
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn bookproject.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
