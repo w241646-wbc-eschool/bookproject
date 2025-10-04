@@ -10,7 +10,7 @@ User = get_user_model()
 class Command(BaseCommand):
     def handle(self, *args, **options ):
         if not User.objects.filter(username = 'your_name').exists():
-            User.objects.create.superuser(
+            User.objects.create_superuser(
                 # username = 'w241646',
                 username = os.environ.get('SUPERUSER_NAME'), # コード修正（6-4（P.308））
                 email = '',
