@@ -1,2 +1,2 @@
 MAX_RATE = 5
-ITEM_PER_PAGE = 2 # コード追記（5-14（P.270））
+ITEM_PER_PAGE = 4 # コード追記（5-14（P.270））
