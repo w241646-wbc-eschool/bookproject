@@ -93,7 +93,13 @@ def index_view(request):
   return render(
     request,
     'book/index.html',
-    {'object_list': object_list, 'ranking_list': ranking_list, 'page_obj':page_obj }) #コード追記（5-3（P.179）） コード修正（5-12（P.260））コード修正（5-14（P.270））
+    {
+      'object_list': object_list,
+      'ranking_list': ranking_list,
+      'page_obj':page_obj,
+      'item_per_page': ITEM_PER_PAGE, # オリジナルコード
+    }
+    ) #コード追記（5-3（P.179）） コード修正（5-12（P.260））コード修正（5-14（P.270））
   
 #コード追記（5-5（P.193））
 '''
@@ -122,11 +128,3 @@ class CRView(CreateView):
 #コード追記（5-7（P.229））
   def get_success_url(self):
     return reverse('detail-book', kwargs={'pk': self.object.book.id})
-
-
-
-# オリジナルコード
-def my_view(request):
-    return render(request, 'my_template.html', {
-        'item_per_page': ITEM_PER_PAGE
-    })
