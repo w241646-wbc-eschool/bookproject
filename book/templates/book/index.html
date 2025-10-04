@@ -22,7 +22,7 @@
     {% endfor %}
   </div>
   <div class="col-3">
-    <h2>評価順 TOP：2</h2> <!-- コード修正（5-14（P.275）） -->
+    <h2>評価順 TOP：{{ item_per_page }}</h2> <!-- コード修正（5-14（P.275）） -->
     {% for ranking_book in page_obj %} <!-- コード修正（5-14（P.275）） -->
     <div class="p-4 m-4 bg-light border border-success rounded">
       <h3 class="text-success h5">{{ ranking_book.title }}</h3>

@@ -123,3 +123,10 @@ class CRView(CreateView):
   def get_success_url(self):
     return reverse('detail-book', kwargs={'pk': self.object.book.id})
 
+
+
+# オリジナルコード
+def my_view(request):
+    return render(request, 'my_template.html', {
+        'item_per_page': ITEM_PER_PAGE
+    })
