@@ -14,7 +14,7 @@ services:
     name: bookproject
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "python -m gunicorn bookproject.asgi:application -k uvicorn.workers.UvicornWorker"
+    startCommand: "python -m gunicorn bp.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
